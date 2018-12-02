@@ -1,0 +1,13 @@
+{
+    "turndown" : {
+        "headingStyle": "atx",
+        "hr": "---",
+        "bulletListMarker": "*",
+        "codeBlockStyle": "fenced",
+        "fence": "```",
+        "emDelimiter": "_",
+        "strongDelimiter": "**",
+        "linkStyle": "inlined",
+        "linkReferenceStyle": "full"
+    }
+}

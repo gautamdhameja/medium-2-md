@@ -1,0 +1,17 @@
+{
+  "name": "medium-2-md",
+  "version": "0.1.0",
+  "preferGlobal": true,
+  "description": "Converts Medium posts to Jekyll/Hugo compatible markdown with front matter.",
+  "bin": {
+    "medium-2-md": "./index.js"
+  },
+  "author": "Gautam Dhameja",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "commander": "^2.19.0",
+    "js-yaml": "^3.12.0",
+    "turndown": "^5.0.1"
+  }
+}
