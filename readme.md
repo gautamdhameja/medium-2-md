@@ -17,6 +17,9 @@ This package works only with already exported Medium posts and not with post url
 ```code
 medium-2-md convert '<path of the posts directory>' -df
 ```
+That's it. The output markdown files will be stored in a subfolder called `md_<a big number>` in the input posts directory itself. (By the way, that big number is coming from the Date.now() JavaScript function added to differentiate the output folders in case we go crazy with it.)
+
+The converted markdown files will have front matter which will have title, description, published date, canonical URL of the original Medium post/story.
 
 ### Optional flags
 
