@@ -32,6 +32,8 @@ The CLI tool can also be used to convert a single Medium post from it's url. It 
 medium-2-md convertUrl '<url of the Medium post>' -o '<path of output directory>' -f
 ```
 
+> The `convertUrl` function also supports parsing of tags. In the converted markdown file, the `keywords` field in the front matter contains the medium tags of the post.
+
 ### Optional flags
 
 The `convertLocal` command supports the following optional flags,
