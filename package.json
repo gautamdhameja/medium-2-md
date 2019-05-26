@@ -19,7 +19,7 @@
     "medium-to-jekyll",
     "medium-to-hugo"
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "commander": "^2.20.0",
