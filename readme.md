@@ -1,6 +1,6 @@
 # medium-2-md
 
-Converts medium posts (html) into Jekyll/Hugo compatible markdown files. Also extracts and adds yaml front matter to the converted markdown files.
+Converts medium posts (html) into Jekyll/Hugo compatible markdown files. Also downloads images and adds yaml front matter to the converted markdown files.
 This package works with already exported Medium posts and also with post urls. It converts all exported posts to markdown using a single command. It is mainly useful in scenarios when you want to migrate your blog away from Medium to Jekyll or Hugo (or something similar which supports markdown content).
 
 ## Steps to use
@@ -17,7 +17,7 @@ This package works with already exported Medium posts and also with post urls. I
 1. Run the following command to convert all your Medium posts (html) to markdown files,
 
 ```code
-medium-2-md convertLocal '<path of the posts directory>' -df
+medium-2-md convertLocal '<path of the posts directory>' -dfi
 ```
 
 That's it. The output markdown files will be stored in a sub-directory called `md_<a big number>` in the input posts directory itself. (By the way, that big number is coming from the Date.now() JavaScript function added to differentiate the output folders in case we go crazy with it.)
@@ -29,7 +29,7 @@ The converted markdown files will have front matter which will have title, descr
 The CLI tool can also be used to convert a single Medium post from it's url. It requires an additional parameter `-o` for output directory where the converted markdown file can be written. To convert a Medium post to markdown from it's url, run the following command after installing the npm package,
 
 ```code
-medium-2-md convertUrl '<url of the Medium post>' -o '<path of output directory>' -f
+medium-2-md convertUrl '<url of the Medium post>' -o '<path of output directory>' -fi
 ```
 
 > The `convertUrl` function also supports parsing of tags. In the converted markdown file, the `keywords` field in the front matter contains the medium tags of the post.
@@ -38,10 +38,11 @@ medium-2-md convertUrl '<url of the Medium post>' -o '<path of output directory>
 
 The `convertLocal` command supports the following optional flags,
 
-1. `-d` or `--drafts` which means if you want to convert the drafts too.
-1. `-f` or `--frontMatter` which means if you want to add the front matter on top of the markdown file. 
+1. `-d` or `--drafts`: Convert the drafts too.
+1. `-f` or `--frontMatter`: Add the front matter on top of the markdown file.
+1. `-i` or `--images`: Download images to a local `img` sub-directory.
 
-The `-f` flag is supported by the `convertUrl` command also.
+The `-f` and `-i` flags are supported by the `convertUrl` command also.
 
 #### Example: Convert from local - drafts enabled
 
@@ -49,10 +50,10 @@ The `-f` flag is supported by the `convertUrl` command also.
 medium-2-md convertLocal E:\\path\\to\\posts\\dir -d
 ```
 
-#### Example: Convert from local - front matter enabled
+#### Example: Convert from local - images enabled
 
 ```code
-medium-2-md convertLocal E:\\path\\to\\posts\\dir -f
+medium-2-md convertLocal E:\\path\\to\\posts\\dir -i
 ```
 
 #### Example: Convert from url - front matter enabled
@@ -61,7 +62,11 @@ medium-2-md convertLocal E:\\path\\to\\posts\\dir -f
 medium-2-md convertUrl https://medium.com/abcd/new-post-993fbe47 -o E:\\path\\to\\output\\dir -f
 ```
 
-Note: The flags do not support any defaults. You need to add them in order to get the respective results (drafts and/or front matter inclusion).
+Note: The flags do not support any defaults. You need to add them in order to get the respective results (drafts, images and/or front matter inclusion).
+
+### Image Download
+
+When using the `-i` or `--images` flag, the images are downloaded into a sub-directory called `img` inside the output directory. If this `img` directory does not already exist, it will be created. If it already exists, the downloaded images will be saved inside the existing directory. The image elements in the converted markdown files will link to their respective local paths from the `img` sub-directory.
 
 ## Dependencies
 
