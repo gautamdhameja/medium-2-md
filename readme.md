@@ -1,7 +1,7 @@
 # medium-2-md
 
-Converts medium posts (html) into Jekyll/Hugo compatible markdown files. Also downloads images and adds yaml front matter to the converted markdown files.
-This package works with already exported Medium posts and also with post urls. It converts all exported posts to markdown using a single command. It is mainly useful in scenarios when you want to migrate your blog away from Medium to Jekyll or Hugo (or something similar which supports markdown content).
+A CLI tool which converts medium posts (html) into Jekyll/Hugo compatible markdown files. Also downloads images and adds yaml front matter to the converted markdown files.
+It works with both exported Medium posts (local files) and post urls; converts all exported posts (or a url) to markdown using a single command. It could be useful in scenarios when you want to migrate your blog away from Medium to Jekyll or Hugo (or something similar, which supports markdown content).
 
 ## Steps to use
 
@@ -22,7 +22,7 @@ medium-2-md convertLocal '<path of the posts directory>' -dfi
 
 That's it. The output markdown files will be stored in a sub-directory called `md_<a big number>` in the input posts directory itself. (By the way, that big number is coming from the Date.now() JavaScript function added to differentiate the output folders in case we go crazy with it.)
 
-The converted markdown files will have front matter which will have title, description, published date and canonical URL of the original Medium post/story.
+The converted markdown files include front matter containing title, description, published date and canonical URL of the original Medium post/story. The images from the Medium posts are downloaded in a sub-directory called `img` inside the output directory.
 
 ### Convert from post URL
 
@@ -66,7 +66,7 @@ Note: The flags do not support any defaults. You need to add them in order to ge
 
 ### Image Download
 
-When using the `-i` or `--images` flag, the images are downloaded into a sub-directory called `img` inside the output directory. If this `img` directory does not already exist, it will be created. If it already exists, the downloaded images will be saved inside the existing directory. The image elements in the converted markdown files will link to their respective local paths from the `img` sub-directory.
+When using the `-i` or `--images` flag, the images are downloaded into a sub-directory called `img` inside the output directory. If this `img` directory does not already exist, it is created. If it already exists, the downloaded images are saved inside the existing directory. The image elements in the converted markdown files link to their respective local paths from the `img` sub-directory.
 
 ## Dependencies
 
