@@ -1,6 +1,6 @@
 {
   "name": "medium-2-md",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "preferGlobal": true,
   "description": "Converts Medium posts to Jekyll/Hugo compatible markdown and adds front matter.",
   "bin": {
