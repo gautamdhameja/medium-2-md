@@ -3,9 +3,10 @@
 
 const program = require('commander');
 const workflow = require('./lib/workflow');
+const packageJson = require('./package.json');
 
 program
-    .version('0.2.0')
+    .version(packageJson.version)
     .command('convertLocal [inputDirectory]')
     .description('Converts Medium exported html files to markdown from a local directory.')
     .option('-d, --drafts', 'Convert drafts too.')
@@ -14,7 +15,7 @@ program
     .action(workflow.processAll);
 
 program
-    .version('0.2.0')
+    .version(packageJson.version)
     .command('convertUrl [url]')
     .description('Converts Medium post to markdown from its url.')
     .option('-o, --outputDir <>', 'Output directory path.')
