@@ -12,6 +12,7 @@ program
     .option('-d, --drafts', 'Convert drafts too.')
     .option('-f, --frontMatter', 'Add front-matter.')
     .option('-i, --images', 'Download images in local directory.')
+    .option('-h', '--headerImage', 'Extract header image and add it to the frontMatter')
     .action(workflow.processAll);
 
 program
