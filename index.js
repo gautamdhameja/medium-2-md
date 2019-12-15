@@ -14,13 +14,17 @@ program
     .option('-i, --images', 'Download images in local directory.')
     .action(workflow.processAll);
 
-program
-    .version(packageJson.version)
-    .command('convertUrl [url]')
-    .description('Converts Medium post to markdown from its url.')
-    .option('-o, --outputDir <>', 'Output directory path.')
-    .option('-f, --frontMatter', 'Add front-matter.')
-    .option('-i, --images', 'Download images in local directory.')
-    .action(workflow.processSingle);
+// Convert from url has been removed.
+// Medium posts seem to have updated (random) css classes and html attributes,
+// and the reader is unable to extract the article content from the html body.
+
+// program
+//     .version(packageJson.version)
+//     .command('convertUrl [url]')
+//     .description('Converts Medium post to markdown from its url.')
+//     .option('-o, --outputDir <>', 'Output directory path.')
+//     .option('-f, --frontMatter', 'Add front-matter.')
+//     .option('-i, --images', 'Download images in local directory.')
+//     .action(workflow.processSingle);
 
 program.parse(process.argv);
