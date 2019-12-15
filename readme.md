@@ -76,4 +76,4 @@ This package uses:
 1. [cheerio](https://github.com/cheeriojs/cheerio) - to select and extract relevant html attributes from Medium posts' html files.
 1. [commander](https://github.com/tj/commander.js) - to enable command line interface.
 1. [js-yaml](https://github.com/nodeca/js-yaml) - to add yaml front matter to markdown files.
-1. [request](https://github.com/request/request) - to get Medium post body from its url.
+1. [node-fetch](https://github.com/bitinn/node-fetch) - to get Medium post body from its url.
