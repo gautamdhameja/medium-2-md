@@ -6,7 +6,7 @@
   "bin": {
     "medium-2-md": "./index.js"
   },
-  "author": "Gautam D <rockboy26@outlook.com> (https://github.com/gautamdhameja/)",
+  "author": "Gautam Dhameja <quasijatt@outlook.com> (https://github.com/gautamdhameja/)",
   "homepage": "https://github.com/gautamdhameja/medium-2-md",
   "repository": {
     "type": "git",
@@ -21,10 +21,10 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
-    "commander": "^2.20.0",
-    "js-yaml": "^3.13.1",
-    "node-fetch": "~2.6.0",
-    "turndown": "^5.0.3"
+    "cheerio": "^1.0.0-rc.3",
+    "commander": "^6.2.0",
+    "js-yaml": "^3.14.0",
+    "node-fetch": "~2.6.1",
+    "turndown": "^7.0.0"
   }
 }

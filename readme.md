@@ -1,7 +1,7 @@
 # medium-2-md
 
-A CLI tool which converts medium posts (html) into Jekyll/Hugo compatible markdown files. Also downloads images and adds yaml front matter to the converted markdown files.
-It works with exported Medium posts (local html files) and converts all exported posts to markdown using a single command. It could be useful in scenarios when you want to migrate your blog away from Medium to Jekyll or Hugo (or something similar, which supports markdown content).
+A CLI tool that converts medium posts (html) into Jekyll/Hugo compatible markdown files. Also downloads images and adds yaml front matter to the converted markdown files.
+It works with exported Medium posts (local html files) and converts them to markdown using a single command. It can be useful in scenarios when you want to migrate your blog away from Medium to Jekyll or Hugo (or something similar that supports markdown content).
 
 ## Steps to use
 
