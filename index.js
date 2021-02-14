@@ -12,6 +12,7 @@ program
     .option('-d, --drafts', 'Convert drafts too.')
     .option('-f, --frontMatter', 'Add front-matter.')
     .option('-i, --images', 'Download images in local directory.')
+    .option('-s, --slugField <name>', 'Specfiy the name of the slug field.', 'slug')
     .action(workflow.processAll);
 
 // Convert from url has been removed.
