@@ -12,6 +12,7 @@ program
     .option('-d, --drafts', 'Convert drafts too.')
     .option('-f, --frontMatter', 'Add front-matter.')
     .option('-i, --images', 'Download images in local directory.')
+    .option('-p, --prefixSlug <prefix>', 'Use a different prefix for the slug path, replaces /@username/')
     .option('-s, --slugField <name>', 'Specfiy the name of the slug field.', 'slug')
     .action(workflow.processAll);
 
