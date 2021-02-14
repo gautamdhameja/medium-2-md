@@ -11,6 +11,7 @@ program
     .description('Converts Medium exported html files to markdown from a local directory.')
     .option('-d, --drafts', 'Convert drafts too.')
     .option('-f, --frontMatter', 'Add front-matter.')
+    .option('-h, --headers [headers...]', 'Specify additional Front Matter headers, for example "header: value"')
     .option('-i, --images', 'Download images in local directory.')
     .option('-p, --prefixSlug <prefix>', 'Use a different prefix for the slug path, replaces /@username/')
     .option('-s, --slugField <name>', 'Specfiy the name of the slug field.', 'slug')
