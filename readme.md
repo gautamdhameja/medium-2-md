@@ -8,12 +8,12 @@ It works with exported Medium posts (local html files) and converts them to mark
 ### Convert local Medium exports
 
 1. Export and extract your Medium posts from your Medium account.
-    1. Go to `https://medium.com/me/settings` and scroll to `Download your information`. Click the download button. This will give you a `medium-export.zip` archive containing all your Medium content.
-    1. Extract the .zip archive downloaded in the previous step. It will have a sub-directory called `posts`.
-    1. Copy the path of this `posts` directory.
+   1. Go to `https://medium.com/me/settings` and scroll to `Download your information`. Click the download button. This will give you a `medium-export.zip` archive containing all your Medium content.
+   1. Extract the .zip archive downloaded in the previous step. It will have a sub-directory called `posts`.
+   1. Copy the path of this `posts` directory.
 1. Install `node.js` and `medium-2-md` on your system.
-    1. Download and Install node.js - [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
-    1. Install medium-2-md - `npm i -g medium-2-md`.
+   1. Download and Install node.js - [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
+   1. Install medium-2-md - `npm i -g medium-2-md`.
 1. Run the following command to convert all your Medium posts (html) to markdown files,
 
 ```code
@@ -28,27 +28,37 @@ The converted markdown files include front matter containing title, description,
 
 The `convertLocal` command supports the following optional flags,
 
-1. `-d` or `--drafts`: Convert the drafts too.
-1. `-f` or `--frontMatter`: Add the front matter on top of the markdown file.
+1. `-f` or `--frontMatter`: Add the front matter on top of the markdown files.
 1. `-i` or `--images`: Download images to a local `img` sub-directory.
+1. `-op` or `--path`: Custom path for saving markdown files.
+1. `-ip` or `--img-path`: Custom path for downloading images.
+1. `-d` or `--drafts`: Convert the drafts too.
 
-#### Example: Convert from local - drafts enabled
+#### Example: Convert from local - front matter and images but no drafts
 
 ```code
-medium-2-md convertLocal E:\\path\\to\\posts\\dir -d
+medium-2-md convertLocal '/home/user/Desktop/posts' -fi
 ```
 
-#### Example: Convert from local - images enabled
+#### Example: Convert from local - default output and images path
 
 ```code
-medium-2-md convertLocal E:\\path\\to\\posts\\dir -i
+medium-2-md convertLocal '/home/user/Desktop/posts' -dfi
+```
+
+#### Example: Convert from local - with custom output and images path
+
+```code
+medium-2-md convertLocal '/home/user/Desktop/posts' -dfi --path '/home/user/Desktop/md' --img-path '/home/user/Downloads/img'
 ```
 
 Note: The flags do not support any defaults. You need to add them in order to get the respective results (drafts, images and/or front matter inclusion).
 
-### Image Download
+### Custom Output and Image Paths
 
-When using the `-i` or `--images` flag, the images are downloaded into a sub-directory called `img` inside the output directory. If this `img` directory does not already exist, it is created. If it already exists, the downloaded images are saved inside the existing directory. The image elements in the converted markdown files link to their respective local paths from the `img` sub-directory.
+When using the `-op` or the `--path` flag, the output markdown files are written to this path instead of the default value. If this custom path is invalid or does not exist, the output files are written to the default path.
+
+When using the `-i` or `--images` with the `--img-path` flag, the images are downloaded into the directory at this custom path. If this directory does not already exist, the images are downloaded to the default path. The image elements in the converted markdown files link to their respective local paths.
 
 ## Dependencies
 

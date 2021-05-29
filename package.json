@@ -26,5 +26,15 @@
     "js-yaml": "^3.14.0",
     "node-fetch": "~2.6.1",
     "turndown": "^7.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "prettier": "2.2.1"
+  },
+  "scripts": {
+    "prettier:fix": "prettier --write .",
+    "prettier": "prettier --check .",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix"
   }
 }

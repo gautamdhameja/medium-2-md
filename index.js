@@ -1,18 +1,22 @@
 #!/usr/bin/env node
-'use strict';
+"use strict";
 
-const program = require('commander');
-const workflow = require('./lib/workflow');
-const packageJson = require('./package.json');
+const program = require("commander");
+const workflow = require("./lib/workflow");
+const packageJson = require("./package.json");
 
 program
-    .version(packageJson.version)
-    .command('convertLocal [inputDirectory]')
-    .description('Converts Medium exported html files to markdown from a local directory.')
-    .option('-d, --drafts', 'Convert drafts too.')
-    .option('-f, --frontMatter', 'Add front-matter.')
-    .option('-i, --images', 'Download images in local directory.')
-    .action(workflow.processAll);
+  .version(packageJson.version)
+  .command("convertLocal [inputDirectory]")
+  .description(
+    "Converts Medium exported html files to markdown from a local directory."
+  )
+  .option("-d, --drafts", "Convert drafts too.")
+  .option("-f, --frontMatter", "Add front-matter.")
+  .option("-i, --images", "Download images at default path.")
+  .option("-op, --path <path>", "Custom path for saving markdown files.")
+  .option("-ip, --img-path <imgpath>", "Custom path for downloading images.")
+  .action(workflow.processAll);
 
 // Convert from url has been removed.
 // Medium posts seem to have updated (random) css classes and html attributes,
@@ -27,4 +31,5 @@ program
 //     .option('-i, --images', 'Download images in local directory.')
 //     .action(workflow.processSingle);
 
+// eslint-disable-next-line no-undef
 program.parse(process.argv);
