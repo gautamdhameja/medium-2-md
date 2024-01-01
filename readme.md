@@ -8,7 +8,7 @@ It works with exported Medium posts (local html files) and converts them to mark
 ### Convert local Medium exports
 
 1. Export and extract your Medium posts from your Medium account.
-   1. Go to `https://medium.com/me/settings` and scroll to `Download your information`. Click the download button. This will give you a `medium-export.zip` archive containing all your Medium content.
+   1. Go to `https://medium.com/me/settings/security` and click on `Download your information`. Click the `export` button. This will allow you to download a `medium-export.zip` archive containing all your Medium content.
    1. Extract the .zip archive downloaded in the previous step. It will have a sub-directory called `posts`.
    1. Copy the path of this `posts` directory.
 1. Install `node.js` and `medium-2-md` on your system.
