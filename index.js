@@ -14,6 +14,7 @@ program
   .option("-d, --drafts", "Convert drafts too.")
   .option("-f, --frontMatter", "Add front-matter.")
   .option("-i, --images", "Download images at default path.")
+  .option("-t, --timeout <milliseconds>", "Timeout between image downloads in milliseconds (default: 100).")
   .option("-op, --path <path>", "Custom path for saving markdown files.")
   .option("-ip, --img-path <imgpath>", "Custom path for downloading images.")
   .action(workflow.processAll);
