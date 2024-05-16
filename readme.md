@@ -30,6 +30,7 @@ The `convertLocal` command supports the following optional flags,
 
 1. `-f` or `--frontMatter`: Add the front matter on top of the markdown files.
 1. `-i` or `--images`: Download images to a local `img` sub-directory.
+1. `-t` or `--timeout`: Set the timeout for downloading images. Default is 100ms.
 1. `-op` or `--path`: Custom path for saving markdown files.
 1. `-ip` or `--img-path`: Custom path for downloading images.
 1. `-d` or `--drafts`: Convert the drafts too.
